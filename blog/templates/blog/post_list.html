@@ -1,19 +1,31 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>My blog</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 </head>
 <body>
-	<div>
-		<h1><a href="#">Vladislav Grigoryev Blog</a></h1>
+	<div class="header">
+		<h1><a href="#">Блог Владислава Григорьева</a></h1>
+		<hr>
 	</div>
-
+	
 	{% for post in posts %}
-		<div>
-			<p>published: {{ post.published_date }}</p>
-			<h1><a href="#">{{ post.title }}</a></h1>
-			<p>{{ post.text|linebreaksbr }}</p>
+		<div class="note">
+			<div class="note-header">
+
+				<h1><a href="#">{{ post.title }}</a></h1>
+			</div>
+
+			<div class="note-text">
+				<p>{{ post.text|linebreaksbr }}</p>
+				<p class="publish-date">опубликовано: {{ post.published_date }}</p>
+			</div>
 		</div>
 	{% endfor %}
 	

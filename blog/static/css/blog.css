@@ -1,0 +1,33 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "SF UI Text_", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+body {
+	padding-left: 50px;
+	width: 80%;
+}
+
+.note {
+    padding-bottom: 25px;
+}
+.note .note-header {
+	display: block;
+}
+.publish-date {
+	margin: 0 0 6px 0;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.note .note-text {
+	display: block;
+}
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
