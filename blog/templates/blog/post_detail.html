@@ -1,7 +1,6 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-	{% for post in posts %}
 		<div class="note">
 			<div class="note-header">
 				<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
@@ -9,8 +8,9 @@
 
 			<div class="note-text">
 				<p>{{ post.text|linebreaksbr }}</p>
+				{% if post.published_date %}
 				<p class="publish-date">опубликовано: {{ post.published_date }}</p>
+				{% endif %}
 			</div>
 		</div>
-	{% endfor %}
 {% endblock content %}
